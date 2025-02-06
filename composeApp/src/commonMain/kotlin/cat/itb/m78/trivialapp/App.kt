@@ -1,4 +1,4 @@
-package cat.itb.m78.exercices
+package cat.itb.m78.trivialapp
 
 
 import androidx.compose.foundation.layout.*
@@ -6,8 +6,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import cat.itb.m78.exercices.theme.AppTheme
-import org.jetbrains.compose.reload.DevelopmentEntryPoint
+import cat.itb.m78.trivialapp.theme.AppTheme
 
 @Composable
 internal fun App() = AppTheme {
