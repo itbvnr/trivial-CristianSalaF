@@ -22,12 +22,14 @@ fun MenuScreen(navController: NavController) {
             modifier = Modifier.size(120.dp)
         )*/
         Spacer(modifier = Modifier.height(16.dp))
+
         Text(
             "Trivial - CSala7e8",
             style = MaterialTheme.typography.headlineLarge,
             color = Color.White
         )
         Spacer(modifier = Modifier.height(32.dp))
+
         Button(
             onClick = {
                 navController.navigate("game") {
@@ -40,7 +42,9 @@ fun MenuScreen(navController: NavController) {
         ) {
             Text("Partida nova")
         }
+
         Spacer(modifier = Modifier.height(16.dp))
+
         Button(
             onClick = { navController.navigate("settings") },
             colors = ButtonDefaults.buttonColors(
@@ -73,30 +77,6 @@ fun GameScreen(navController: NavController, gameState: GameState) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            "Temps: ${gameState.remainingTime}s",
-            style = MaterialTheme.typography.titleLarge,
-            color = if (gameState.remainingTime <= 5) Color.Red else Color.Black
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Slider(
-            value = gameState.remainingTime.toFloat(),
-            onValueChange = { /* Not used, slider is read-only */ },
-            valueRange = 0f..timePerRound.toFloat(),
-            enabled = false,
-            colors = SliderDefaults.colors(
-                thumbColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary,
-                activeTrackColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary,
-                disabledThumbColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary,
-                disabledActiveTrackColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary
-            ),
-            modifier = Modifier.width(200.dp)
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
             "Ronda ${gameState.currentRound}/${gameState.totalRounds}",
             style = MaterialTheme.typography.titleLarge,
             color = Color.Black
@@ -128,6 +108,30 @@ fun GameScreen(navController: NavController, gameState: GameState) {
                 Text(answer)
             }
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            "Temps: ${gameState.remainingTime}s",
+            style = MaterialTheme.typography.titleLarge,
+            color = if (gameState.remainingTime <= 5) Color.Red else Color.Black
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Slider(
+            value = gameState.remainingTime.toFloat(),
+            onValueChange = { /* Not used, slider is read-only */ },
+            valueRange = 0f..timePerRound.toFloat(),
+            enabled = false,
+            colors = SliderDefaults.colors(
+                thumbColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary,
+                activeTrackColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary,
+                disabledThumbColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary,
+                disabledActiveTrackColor = if (gameState.remainingTime <= 5) Color.Red else MaterialTheme.colorScheme.primary
+            ),
+            modifier = Modifier.width(200.dp)
+        )
     }
 }
 
@@ -179,6 +183,7 @@ fun SettingsScreen(navController: NavController) {
             Button(onClick = { isDropdownExpanded = true }) {
                 Text(difficulty.name)
             }
+
             DropdownMenu(
                 expanded = isDropdownExpanded,
                 onDismissRequest = { isDropdownExpanded = false }
@@ -212,6 +217,7 @@ fun SettingsScreen(navController: NavController) {
                         selected = rounds == number,
                         onClick = { rounds = number }
                     )
+
                     Text(number.toString())
                 }
             }
@@ -237,6 +243,7 @@ fun SettingsScreen(navController: NavController) {
                 TrivialSettingsManager.update(
                     TrivialSettings(difficulty, rounds, timePerRound)
                 )
+
                 navController.navigate("menu")
             }
         ) {
