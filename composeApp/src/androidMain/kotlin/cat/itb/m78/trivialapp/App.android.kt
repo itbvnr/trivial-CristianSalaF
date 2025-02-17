@@ -1,4 +1,4 @@
-package cat.itb.m78.exercices
+package cat.itb.m78.trivialapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
