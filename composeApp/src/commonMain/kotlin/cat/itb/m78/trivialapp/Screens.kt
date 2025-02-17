@@ -1,5 +1,6 @@
 package cat.itb.m78.trivialapp
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -8,6 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import m78exercices.composeapp.generated.resources.Res
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun MenuScreen(navController: NavController) {
@@ -17,7 +20,7 @@ fun MenuScreen(navController: NavController) {
         verticalArrangement = Arrangement.Center
     ) {
         /*Image(
-            painter = painterResource("icon.png"),
+            painter = painterResource(Res.drawable.icon),
             contentDescription = "Game Icon",
             modifier = Modifier.size(120.dp)
         )*/

@@ -9,7 +9,7 @@ data class Question(
 enum class TrivialSubject {
     Kotlin,
     Html,
-    VideoGames
+    Videojocs
 }
 
 object QuestionRepository {
@@ -436,7 +436,7 @@ object QuestionRepository {
         val questions = when (subject) {
             TrivialSubject.Kotlin -> kotlinQuestions
             TrivialSubject.Html -> htmlQuestions
-            TrivialSubject.VideoGames -> videoGamesQuestions
+            TrivialSubject.Videojocs -> videoGamesQuestions
         }
         return questions.shuffled().take(count)
     }
