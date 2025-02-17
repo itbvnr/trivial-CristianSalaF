@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import m78exercices.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.painterResource
+import m78exercices.composeapp.generated.resources.icon
 
 @Composable
 fun MenuScreen(navController: NavController) {
@@ -19,11 +20,11 @@ fun MenuScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        /*Image(
+        Image(
             painter = painterResource(Res.drawable.icon),
             contentDescription = "Game Icon",
             modifier = Modifier.size(120.dp)
-        )*/
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
